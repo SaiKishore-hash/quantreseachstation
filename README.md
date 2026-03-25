@@ -1,23 +1,46 @@
-# Autonomous Quantitative Research Workstation
-**A Multi-Agent Framework for Financial Hypothesis Discovery**
+# Quantitative Research Workstation v4.1 (Cloud Edition)
+**An Autonomous Multi-Agent Framework for Institutional Hypothesis Discovery**
 
 ## Overview
-This project implements an autonomous quantitative research desk designed to bridge the gap between qualitative market intuition and statistical validation. Utilizing a Local LLM (Llama 3 via Ollama), the system acts as a Senior Quant Analyst to generate, audit, and validate trading hypotheses for Equities (AAPL) and Forex (EUR/USD).
+This workstation is a professional-grade quantitative tool designed to automate the discovery and statistical validation of trading hypotheses. By leveraging the **Llama-3.3-70B** model via the **Groq Inference Engine**, the system bridges the gap between raw market data and actionable investment theses.
+
+The application is optimized for high-stakes environments, focusing on two primary asset classes: **Equities (AAPL)** and **Forex (EUR/USD)**.
 
 ## Core Architecture
-The system follows a three-stage pipeline:
-1. **Hypothesis Generation**: The Agent identifies technical anomalies and market inefficiencies.
-2. **Backtest Simulation**: Mathematical logic is applied against 24 months of historical data.
-3. **Statistical Audit**: Strategies are accepted or rejected based on a Sharpe Ratio threshold of 1.4.
+The system operates through a high-performance "Agentic" pipeline:
+1.  **Market Data Intake**: Pulls 24 months of adjusted historical price action via `yfinance`.
+2.  **Autonomous Thesis Generation**: A Senior Quant Agent (Llama-3.3) identifies technical anomalies and structural inefficiencies.
+3.  **Statistical Audit**: Every hypothesis is subjected to a variance-based backtest simulation to calculate the **Annualized Sharpe Ratio**.
+4.  **Executive Verdict**: Strategies are categorized as **ACCEPTED** (Sharpe > 1.5) or **REJECTED** based on institutional risk thresholds.
+
+## Key Features
+- **Cloud-Native Intelligence**: Powered by Groq for sub-second inference speeds.
+- **Zero-Friction UI**: Bloomberg-inspired minimalist interface designed for professional clarity.
+- **Secure Environment**: Implements strict `secrets` management for API security, ensuring no sensitive credentials leak to public repositories.
 
 ## Technical Stack
-- **Engine**: Python 3.10+
-- **Interface**: Streamlit (Institutional UI Design)
-- **Intelligence**: Ollama (Llama 3)
-- **Data Source**: Yahoo Finance API
+- **Language**: Python 3.10+
+- **Inference**: Groq Cloud API (Llama-3.3-70B-Versatile)
+- **Framework**: Streamlit (Center-Aligned Custom CSS)
+- **Data Engine**: Pandas, NumPy, YFinance
 
-## Setup Instructions
-1. Install [Ollama](https://ollama.com/) and run `ollama run llama3`.
-2. Clone this repository.
-3. Install dependencies: `pip install -r requirements.txt`.
-4. Launch the station: `streamlit run app.py`.
+## Installation & Setup
+1.  **Clone the Repository**:
+    ```bash
+    git clone [https://github.com/YourUsername/YourRepoName.git](https://github.com/YourUsername/YourRepoName.git)
+    cd YourRepoName
+    ```
+2.  **Install Dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Configure API Key**:
+    - **Local**: Create a `.env` file with `GROQ_API_KEY=your_key_here`.
+    - **Cloud**: Add `GROQ_API_KEY` to your Streamlit Cloud "Secrets" manager.
+4.  **Launch Station**:
+    ```bash
+    streamlit run app.py
+    ```
+
+---
+**Project Status**: Production Ready | PhD Research Portfolio Piece
