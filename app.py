@@ -93,6 +93,3 @@ if run_btn:
             m1.metric("Sharpe", sharpe)
             m2.metric("Confidence", "91%")
             m3.markdown(f"**Verdict**\n<div class='verdict-box {v_class}'>{verdict}</div>", unsafe_allow_html=True)
-
-st.divider()
-st.caption("Central Command v4.1 | No User Input Required")
